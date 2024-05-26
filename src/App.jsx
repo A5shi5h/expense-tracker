@@ -4,9 +4,9 @@ import './App.css'
 function App() {
 
   const[total , setTotal] = useState(0)
+  let[newTotal , setNewTotal] = useState(0)
   const[item , setItem] = useState("")
   const[list , setList] = useState([])
-  let[newTotal , setNewTotal] = useState(0)
   
   let nextId = 0
 
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <div className='h-96 w-full bg-red-500 rounded-md'>
+      <div className='h-96 w-full bg-red-500 rounded-md shadow-black shadow-lg'>
         <h1 className='font-semibold text-4xl p-4'>My Expense Tracker</h1>
         <label>Item name : </label>
          <input type='text' placeholder='enter the item name' 
@@ -50,7 +50,7 @@ function App() {
           <ul className='mt-4 pb-4'>
             {list.map(items => (
               <li key={items.id}>
-                <div>
+                <div className='text-2xl font-semibold'>
                   <p>{items.name}</p>
                 </div>
               </li>
