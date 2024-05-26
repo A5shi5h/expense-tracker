@@ -4,12 +4,12 @@ import './App.css'
 function App() {
 
   const[total , setTotal] = useState(0)
-  let newTotal = 0
+  let[newTotal , setNewTotal] = useState(0)
+  
 
   const calculateExpense = () => {
     newTotal = Number(newTotal) + Number(total)
-    setTotal(newTotal)
-    console.log(total)
+    setNewTotal(newTotal)
     console.log(newTotal)
   }
 
@@ -24,7 +24,8 @@ function App() {
          <br />
          <label>Item price : </label>
          <input type='number' placeholder='enter the item price' 
-         className='p-3 mt-6 rounded-lg bg-slate-200'
+         className='p-3 mt-6 rounded-lg bg-slate-200' id='price'
+         value={total}
          onChange={e => setTotal(e.target.value)}
          />
          <br />
@@ -35,7 +36,7 @@ function App() {
          >Add</button>
          <br />
          <h1 className=''>My Total Expense</h1>
-         <p>{}</p>
+         <p>{newTotal}</p>
       </div>
     </>
   )
